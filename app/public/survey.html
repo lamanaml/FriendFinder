@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="assets/css/ff.css">
     </head>
     <body>
     
@@ -22,18 +22,46 @@
         </div>
 
 <form>
-    <div class="question">
-        <div class="radio-inline">
-            <label><input type="radio" name="1">Option 1</label>
-        </div>
-        <div class="radio-inline">
-            <label><input type="radio" name="1">Option 2</label>
-        </div>
-        <div class="radio-inline">
-            <label><input type="radio" name="1" >Option 3</label>
-        </div>
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Name">
     </div>
+
+    <div class="form-group">
+        <label for="Photo">Upload Photo</label>
+        <input type="file" class="form-control-file" id="photo">
+    </div>
+
+    <div class="question">
+        <h3>Question 1</h3>
+        <h5> ask question </h5>
+        <select id="q1">
+            <option value="5">5 - Strongly Agree</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1 - Strongly Disagree</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <h3>Question 2</h3>
+        <h5> ask question </h5>
+        <select id="q1">
+            <option value="5">5 - Strongly Agree</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1 - Strongly Disagree</option>
+        </select>
+    </div>
+
+    <p>
     <button type="submit" class="btn btn-primary">Submit</button>
+    </p>
+
+
 </form>
 
 </div>
