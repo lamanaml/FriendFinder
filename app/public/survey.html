@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery.js"></script>
 
         <link rel="stylesheet" href="assets/css/ff.css">
     </head>
@@ -32,7 +33,7 @@
         <label for="Photo">Upload Photo</label>
         <input type="file" class="form-control-file" id="photo">
     </div>
-
+<hr>
     <div class="question">
         <h3>Question 1</h3>
         <h5> ask question </h5>
@@ -48,7 +49,7 @@
     <div class="question">
         <h3>Question 2</h3>
         <h5> ask question </h5>
-        <select id="q1">
+        <select id="q2">
             <option value="5">5 - Strongly Agree</option>
             <option value="4">4</option>
             <option value="3">3</option>
@@ -57,8 +58,21 @@
         </select>
     </div>
 
+    <div class="question">
+        <h3>Question 3</h3>
+        <h5> ask question </h5>
+        <select id="q3">
+            <option value="5">5 - Strongly Agree</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1 - Strongly Disagree</option>
+        </select>
+    </div>
+
+<hr>
     <p>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
     </p>
 
 
@@ -66,7 +80,37 @@
 
 </div>
 
+    <script type="text/javascript"> 
+
+$("#submit").on("click", function(event) {
+    event.preventDefault();
+
+    var newFriend = {
+        name: $("#name").val().trim(),
+        photo: $("#photo").val(),
+        scores: [
+            $("#q1").val(),
+            $("#q2").val(),
+            $("#q3").val()
+            ]   
+    };
+    console.log(newFriend)
+
+    $.post("api/friends", newFriend, function(data) {
+        if (data) {
+            alert("new friend added")
+        };
+    })
+
+}); 
         
-        <script src="" async defer></script>
+        
+        
+        
+        
+        
+        
+        
+        </script>
     </body>
 </html>
