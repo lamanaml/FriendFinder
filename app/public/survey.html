@@ -70,6 +70,88 @@
         </select>
     </div>
 
+    <div class="question">
+        <h3>Question 4</h3>
+        <h5> ask question </h5>
+        <select id="q4">
+            <option value="5">5 - Strongly Agree</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1 - Strongly Disagree</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <h3>Question 5</h3>
+        <h5> ask question </h5>
+        <select id="q5">
+            <option value="5">5 - Strongly Agree</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1 - Strongly Disagree</option>
+        </select>
+    </div>
+    <div class="question">
+        <h3>Question 6</h3>
+        <h5> ask question </h5>
+        <select id="q6">
+            <option value="5">5 - Strongly Agree</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1 - Strongly Disagree</option>
+        </select>
+    </div>
+    
+    <div class="question">
+        <h3>Question 7</h3>
+        <h5> ask question </h5>
+        <select id="q7">
+            <option value="5">5 - Strongly Agree</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1 - Strongly Disagree</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <h3>Question 8</h3>
+        <h5> ask question </h5>
+        <select id="q8">
+            <option value="5">5 - Strongly Agree</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1 - Strongly Disagree</option>
+        </select>
+    </div>
+    <div class="question">
+        <h3>Question 9</h3>
+        <h5> ask question </h5>
+        <select id="q9">
+            <option value="5">5 - Strongly Agree</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1 - Strongly Disagree</option>
+        </select>
+    </div>
+
+        <div class="question">
+        <h3>Question 10</h3>
+        <h5> ask question </h5>
+        <select id="q10">
+            <option value="5">5 - Strongly Agree</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1 - Strongly Disagree</option>
+        </select>
+    </div>
+
 <hr>
     <p>
     <button id="submit" type="submit" class="btn btn-primary">Submit</button>
@@ -91,18 +173,23 @@ $("#submit").on("click", function(event) {
         scores: [
             $("#q1").val(),
             $("#q2").val(),
-            $("#q3").val()
+            $("#q3").val(),
+            $("#q4").val(),  
+            $("#q5").val(),  
+            $("#q6").val(),  
+            $("#q7").val(),  
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val()            
             ]   
     };
     console.log(newFriend)
 
     $.post("api/friends", newFriend, function(data) {
-        if (data) {
-            alert("new friend added")
-        };
-    })
-
-}); 
+        friends.push(req.body);
+        
+        });
+   }); 
         
         
         
