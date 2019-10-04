@@ -11,51 +11,45 @@ module.exports = function(app) {
     });
 
 
-     app.post('/api/friends', function(req, res) {
+          app.post('/api/friends', function (req, res) {
+        // loop through all of the possible options
+        var bestMatch = {
+            name: "",
+            photo: "",
+            friendDifference: 1000
+        };
 
+    
+        var userScores = req.body.scores;
+        var userName = req.body.name;
+        var userPhoto = req.body.photo;
+        var totalDifference = 0;
+
+        //loop through the friends data array of objects to get each friends scores
+        for (var i = 0; i < friends.length - 1; i++) {
+            console.log(friends[i].name);
+            totalDifference = 0;
+
+            //loop through that friends score and the users score and calculate the absolute difference between the two and push that to the total difference variable set above
+            for (var j = 0; j < 10; j++) {
+                // We calculate the difference between the scores and sum them into the totalDifference
+                totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
+                // If the sum of differences is less then the differences of the current "best match"
+                if (totalDifference <= bestMatch.friendDifference) {
+
+                    // Reset the bestMatch to be the new friend. 
+                    bestMatch.name = friends[i].name;
+                    bestMatch.photo = friends[i].photo;
+                    bestMatch.friendDifference = totalDifference;
+                }
+            }
+        }
+
+        // The push method use to save user's data to the database
+        friends.push(req.body);
+
+        //The res.json method will return a JSON data with the user's match which was looped through frieds data array. 
+        res.json(bestMatch);
+    });
      
-    	//	Set variables only needed for the post
-        var difference = 40;
-        var matchName = '';
-        var matchPhoto = '';
-
-   // For-each loop to go through the data in friends.js to find a match
-      for (var j = 0; j < friends.length; j++) {
-    
-    // Variables for comparing matches
-            var matchedScoresArray = [];
-            var totalDifference 
-
-    // Function to assist in the addition reduce() below
-          function add(total, num) {
-               return total + num;
-           }
-      }
-           
-    // new value to the matchedScoresArray
-    //  for (var i = 0; i < friends.scores.length; i++) {
-    //  matchedScoresArray.push(Math.abs(parseInt(req.body.scores[i]) - parseInt(friends.scores[i])));
-    //  console.log(newFriends.scores)
-
-     }
-
-            
-    
-    //     // Once the cycle is complete, the match with the least difference will remain,
-    //    // and that data will be sent as a json object back to the client
-    //     res.json({
-    //         name: matchName,
-    //         photo: matchPhoto
-
-    //     });
-    //             })
-    //     });
-     
-
-    //     // This adds the new users sent data object to friends.js
-    //     friends.push(req.body);
-    
-
- })
-}
-
+};
