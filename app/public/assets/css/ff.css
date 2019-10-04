@@ -1,3 +1,10 @@
 .question {
-    margin: 40px;
-}
+    margin: 50px;
+};
+
+.container {
+    background-image: url("../images/bgimage.jpg");
+    background-color: blue;
+ 
+};
+

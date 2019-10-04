@@ -3,13 +3,17 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery.js"></script>
+        <title>Friend Finder</title>
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>">
+       
+       <link rel="stylesheet" href="assets/css/ff.css">
+    
 
-        <link rel="stylesheet" href="assets/css/ff.css">
+        
     </head>
     <body>
     
@@ -36,7 +40,7 @@
 <hr>
     <div class="question">
         <h3>Question 1</h3>
-        <h5> ask question </h5>
+        <h5> The earth is flat. </h5>
         <select id="q1">
             <option value="5">5 - Strongly Agree</option>
             <option value="4">4</option>
@@ -48,7 +52,7 @@
 
     <div class="question">
         <h3>Question 2</h3>
-        <h5> ask question </h5>
+        <h5>Going through a black hole will kill you. </h5>
         <select id="q2">
             <option value="5">5 - Strongly Agree</option>
             <option value="4">4</option>
@@ -60,7 +64,7 @@
 
     <div class="question">
         <h3>Question 3</h3>
-        <h5> ask question </h5>
+        <h5> There are aliens living amongst us. </h5>
         <select id="q3">
             <option value="5">5 - Strongly Agree</option>
             <option value="4">4</option>
@@ -72,7 +76,7 @@
 
     <div class="question">
         <h3>Question 4</h3>
-        <h5> ask question </h5>
+        <h5> All continents were connected at one time.</h5>
         <select id="q4">
             <option value="5">5 - Strongly Agree</option>
             <option value="4">4</option>
@@ -84,7 +88,7 @@
 
     <div class="question">
         <h3>Question 5</h3>
-        <h5> ask question </h5>
+        <h5> Earth started due to an explosion in space</h5>
         <select id="q5">
             <option value="5">5 - Strongly Agree</option>
             <option value="4">4</option>
@@ -95,7 +99,7 @@
     </div>
     <div class="question">
         <h3>Question 6</h3>
-        <h5> ask question </h5>
+        <h5> Nirubu aka Planet X is on it's way back... </h5>
         <select id="q6">
             <option value="5">5 - Strongly Agree</option>
             <option value="4">4</option>
@@ -107,7 +111,7 @@
     
     <div class="question">
         <h3>Question 7</h3>
-        <h5> ask question </h5>
+        <h5> There is a reptilian race living amongst us. </h5>
         <select id="q7">
             <option value="5">5 - Strongly Agree</option>
             <option value="4">4</option>
@@ -119,7 +123,7 @@
 
     <div class="question">
         <h3>Question 8</h3>
-        <h5> ask question </h5>
+        <h5> Time travel is possible. </h5>
         <select id="q8">
             <option value="5">5 - Strongly Agree</option>
             <option value="4">4</option>
@@ -130,7 +134,7 @@
     </div>
     <div class="question">
         <h3>Question 9</h3>
-        <h5> ask question </h5>
+        <h5> Beyonce is awesome. </h5>
         <select id="q9">
             <option value="5">5 - Strongly Agree</option>
             <option value="4">4</option>
@@ -142,7 +146,7 @@
 
         <div class="question">
         <h3>Question 10</h3>
-        <h5> ask question </h5>
+        <h5> Burning man is awesome. </h5>
         <select id="q10">
             <option value="5">5 - Strongly Agree</option>
             <option value="4">4</option>
@@ -162,42 +166,81 @@
 
 </div>
 
+
+
+
+<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        <h2 class="modal-title"><strong>Your Best Match</strong></h2>
+	      </div>
+	      <div class="modal-body">
+	        <div id="friendName"></div>
+	        <img id="friendImg" class="img img-responsive" alt="" />
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+
+	  </div>
+	</div>
+
     <script type="text/javascript"> 
 
 $("#submit").on("click", function(event) {
     event.preventDefault();
 
-    var newFriend = {
-        name: $("#name").val().trim(),
-        photo: $("#photo").val(),
-        scores: [
+     function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function() {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+        $(".chosen-select").each(function() {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+        return isValid;
+      }
+      // If all required fields are filled
+      if (validateForm()) {
+        // Create an object for the user"s data
+        var newFriend = {
+          name: $("#name").val(),
+          photo: $("#photo").val(),
+          scores: [
             $("#q1").val(),
             $("#q2").val(),
             $("#q3").val(),
-            $("#q4").val(),  
-            $("#q5").val(),  
-            $("#q6").val(),  
-            $("#q7").val(),  
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
             $("#q8").val(),
             $("#q9").val(),
-            $("#q10").val()            
-            ]   
-    };
-    console.log(newFriend)
+            $("#q10").val()
+          ]
+        };
+        //post the data to the friends API.
+    $.post("/api/friends", newFriend, function(res) {
+      
+          $("#friendName").text(res.name);
+          $("#friendImg").attr("src", res.photo);
 
-    $.post("api/friends", newFriend, function(data) {
-        friends.push(req.body);
-        
+          $("#myModal").modal("toggle");
         });
-   }); 
-        
-        
-        
-        
-        
-        
-        
-        
+      } else {
+        alert("Please fill out all fields before submitting!");
+      }
+    });
         </script>
     </body>
 </html>
