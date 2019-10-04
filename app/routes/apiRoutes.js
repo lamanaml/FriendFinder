@@ -28,23 +28,24 @@ module.exports = function(app) {
                     var thisAnswer = thisUser.answers[i];
                     var difference = +otherAnswer - +thisAnswer;
                     totalDifference += Math.abs(difference);
+                    console.log(totalDifference)
                 }
 
                 differences.push(totalDifference);
             });
 
-            // Find the minimum difference score.
-            var minimumDifference = Math.min.apply(null, differences);
+            // // Find the minimum difference score.
+            // var minimumDifference = Math.min.apply(null, differences);
 
-            // Since there may be more than one potential friend with that score, create an array.
-            var bestMatches = [];
+            // // Since there may be more than one potential friend with that score, create an array.
+            // var bestMatches = [];
 
-            // For each item in differences, if it is equal to the minimumDifference, add the corresponding friendData to the bestMatches array.
-            for (var i = 0; i < differences.length; i++) {
-                if (differences[i] === minimumDifference) {
-                    bestMatches.push(friends);
-                }
-            }
+            // // For each item in differences, if it is equal to the minimumDifference, add the corresponding friendData to the bestMatches array.
+            // for (var i = 0; i < differences.length; i++) {
+            //     if (differences[i] === minimumDifference) {
+            //         bestMatches.push(friends);
+            //     }
+            // }
 
             // Then send bestMatches to the client.
             res.json(bestMatches);
