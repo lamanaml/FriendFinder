@@ -1,15 +1,27 @@
-  "name": "hotrestaurant",
-  "version": "1.0.1",
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "dependencies": {
+    "epress": "^0.0.1-security",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "routes": "^2.1.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "watch": "nodemon server.js"
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lamanaml/FriendFinder.git"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.3"
-  }
-
+  "bugs": {
+    "url": "https://github.com/lamanaml/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/lamanaml/FriendFinder#readme"
+}
