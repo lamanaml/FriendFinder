@@ -11,6 +11,7 @@
     background-image: url('../images/bgimage.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
+    padding: 30px;
 }
 
 .question {
