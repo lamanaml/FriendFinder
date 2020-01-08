@@ -19,7 +19,9 @@ CSS / Bootstrap
 
 Javascript
 
-AJAX
+AJAX / JSON
+
+Express
 
 Node.js
 

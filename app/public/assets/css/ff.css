@@ -1,15 +1,19 @@
 .btn {
     margin:20px;
-};
+}
+
+.container1 {
+    padding: 20px;
+    margin: 10px;
+}
 
 .jumbotron {
     background-image: url('../images/bgimage.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-} 
+}
+
 .question {
     margin: 50px;
-};
-
-
+}
 
