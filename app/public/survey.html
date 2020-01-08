@@ -4,243 +4,250 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Friend Finder</title>
-  
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>">
-       
-       <link rel="stylesheet" href="assets/css/ff.css">
-    
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/ff.css">
         
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </head>
-    <body>
-    
-    <div class="container">
+    <body>    
+        
         <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">Friend Finder</h1>
-                <p class="lead"><p>Answer a few basic questions.</p>
-                <p>Then find the friend with the greatest compatibility!</p>
+            <h1 class="display-4">Friend Finder</h1>
+            <p class="lead"><p>Answer a few basic questions.</p>
+            <p>Then find the friend with the greatest compatibility!</p>
+        </div>
+            
+        <div class="container">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="photoLink">Link to Photo Image (Required)</label>
+                    <input type="url" class="form-control" id="photo">
+                </div>
+
+                <hr>
+
+                <div class="question">
+                    <h3>Question 1</h3>
+                    <h5> The earth is flat. </h5>
+                    <select id="q1">
+                        <option value="5">5 - Strongly Agree</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1 - Strongly Disagree</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <h3>Question 2</h3>
+                    <h5>Going through a black hole will kill you. </h5>
+                    <select id="q2">
+                        <option value="5">5 - Strongly Agree</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1 - Strongly Disagree</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <h3>Question 3</h3>
+                    <h5> There are aliens living amongst us. </h5>
+                    <select id="q3">
+                        <option value="5">5 - Strongly Agree</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1 - Strongly Disagree</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <h3>Question 4</h3>
+                    <h5> All continents were connected at one time.</h5>
+                    <select id="q4">
+                        <option value="5">5 - Strongly Agree</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1 - Strongly Disagree</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <h3>Question 5</h3>
+                    <h5> Earth started due to an explosion in space</h5>
+                    <select id="q5">
+                        <option value="5">5 - Strongly Agree</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1 - Strongly Disagree</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <h3>Question 6</h3>
+                    <h5> Nirubu aka Planet X is on it's way back... </h5>
+                    <select id="q6">
+                        <option value="5">5 - Strongly Agree</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1 - Strongly Disagree</option>
+                    </select>
+                </div>
+                
+                <div class="question">
+                    <h3>Question 7</h3>
+                    <h5> There is a reptilian race living amongst us. </h5>
+                    <select id="q7">
+                        <option value="5">5 - Strongly Agree</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1 - Strongly Disagree</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <h3>Question 8</h3>
+                    <h5> Time travel is possible. </h5>
+                    <select id="q8">
+                        <option value="5">5 - Strongly Agree</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1 - Strongly Disagree</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <h3>Question 9</h3>
+                    <h5> Beyonce is awesome. </h5>
+                    <select id="q9">
+                        <option value="5">5 - Strongly Agree</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1 - Strongly Disagree</option>
+                    </select>
+                </div>
+
+                    <div class="question">
+                    <h3>Question 10</h3>
+                    <h5> Burning man is awesome. </h5>
+                    <select id="q10">
+                        <option value="5">5 - Strongly Agree</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1 - Strongly Disagree</option>
+                    </select>
+                </div>
+
+                <hr>
+                <p>
+                <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                </p>
+
+            </form>
+
+        </div>
+
+    <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title"><strong>Your Best Match</strong></h2>
+                <button type="button" class="close" data-dismiss="modal float-right" >&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div id="friendName"></div>
+                <div><img id="friendImg" class="img img-responsive" alt="" /></div>
+            </div>
+            <hr>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
 
-<form>
+        </div>
+        </div>
 
-    <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Name">
-    </div>
+    <!-- javascript -->
+        <script type="text/javascript"> 
 
-    <div class="form-group">
-        <label for="photoLink">Link to Photo Image (Required)</label>
-        <input type="url" class="form-control" id="photoLink">
-    </div>
-<hr>
-    <div class="question">
-        <h3>Question 1</h3>
-        <h5> The earth is flat. </h5>
-        <select id="q1">
-            <option value="5">5 - Strongly Agree</option>
-            <option value="4">4</option>
-            <option value="3">3</option>
-            <option value="2">2</option>
-            <option value="1">1 - Strongly Disagree</option>
-        </select>
-    </div>
+            $("#submit").on("click", function(event) {
+                event.preventDefault();
 
-    <div class="question">
-        <h3>Question 2</h3>
-        <h5>Going through a black hole will kill you. </h5>
-        <select id="q2">
-            <option value="5">5 - Strongly Agree</option>
-            <option value="4">4</option>
-            <option value="3">3</option>
-            <option value="2">2</option>
-            <option value="1">1 - Strongly Disagree</option>
-        </select>
-    </div>
+                function validateForm() {
+                    var isValid = true;
+                    $(".form-control").each(function() {
+                        if ($(this).val() === "") {
+                            isValid = false;
+                        }
+                    });
+            
+                    $(".chosen-select").each(function() {
+                        if ($(this).val() === "") {
+                        isValid = false;
+                        }
+                    });
+                    return isValid;
+                }
+        // If all required fields are filled
+            if (validateForm()) {
+            // Create an object for the user's data
+                var newFriend = {
+                name: $("#name").val(),
+                photo: $("#photo").val(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ],
+                };
+            
+            $.ajax({
+                type: 'POST',
+                data: newFriend,
+                url: "/api/friends",
+                success: function(res){
+                    alert("Info added!");
+                    $("#friendName").text(res.name);
+                    $("#friendImg").attr("src", res.photo);
+                    $("#myModal").modal("toggle"); //this apparently turns on the modal
+                },
+            });
 
-    <div class="question">
-        <h3>Question 3</h3>
-        <h5> There are aliens living amongst us. </h5>
-        <select id="q3">
-            <option value="5">5 - Strongly Agree</option>
-            <option value="4">4</option>
-            <option value="3">3</option>
-            <option value="2">2</option>
-            <option value="1">1 - Strongly Disagree</option>
-        </select>
-    </div>
-
-    <div class="question">
-        <h3>Question 4</h3>
-        <h5> All continents were connected at one time.</h5>
-        <select id="q4">
-            <option value="5">5 - Strongly Agree</option>
-            <option value="4">4</option>
-            <option value="3">3</option>
-            <option value="2">2</option>
-            <option value="1">1 - Strongly Disagree</option>
-        </select>
-    </div>
-
-    <div class="question">
-        <h3>Question 5</h3>
-        <h5> Earth started due to an explosion in space</h5>
-        <select id="q5">
-            <option value="5">5 - Strongly Agree</option>
-            <option value="4">4</option>
-            <option value="3">3</option>
-            <option value="2">2</option>
-            <option value="1">1 - Strongly Disagree</option>
-        </select>
-    </div>
-    <div class="question">
-        <h3>Question 6</h3>
-        <h5> Nirubu aka Planet X is on it's way back... </h5>
-        <select id="q6">
-            <option value="5">5 - Strongly Agree</option>
-            <option value="4">4</option>
-            <option value="3">3</option>
-            <option value="2">2</option>
-            <option value="1">1 - Strongly Disagree</option>
-        </select>
-    </div>
-    
-    <div class="question">
-        <h3>Question 7</h3>
-        <h5> There is a reptilian race living amongst us. </h5>
-        <select id="q7">
-            <option value="5">5 - Strongly Agree</option>
-            <option value="4">4</option>
-            <option value="3">3</option>
-            <option value="2">2</option>
-            <option value="1">1 - Strongly Disagree</option>
-        </select>
-    </div>
-
-    <div class="question">
-        <h3>Question 8</h3>
-        <h5> Time travel is possible. </h5>
-        <select id="q8">
-            <option value="5">5 - Strongly Agree</option>
-            <option value="4">4</option>
-            <option value="3">3</option>
-            <option value="2">2</option>
-            <option value="1">1 - Strongly Disagree</option>
-        </select>
-    </div>
-    <div class="question">
-        <h3>Question 9</h3>
-        <h5> Beyonce is awesome. </h5>
-        <select id="q9">
-            <option value="5">5 - Strongly Agree</option>
-            <option value="4">4</option>
-            <option value="3">3</option>
-            <option value="2">2</option>
-            <option value="1">1 - Strongly Disagree</option>
-        </select>
-    </div>
-
-        <div class="question">
-        <h3>Question 10</h3>
-        <h5> Burning man is awesome. </h5>
-        <select id="q10">
-            <option value="5">5 - Strongly Agree</option>
-            <option value="4">4</option>
-            <option value="3">3</option>
-            <option value="2">2</option>
-            <option value="1">1 - Strongly Disagree</option>
-        </select>
-    </div>
-
-<hr>
-    <p>
-    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
-    </p>
-
-
-</form>
-
-</div>
-
-
-
-
-<!-- Modal -->
-	<div id="myModal" class="modal fade" role="dialog">
-	  <div class="modal-dialog">
-
-	    <!-- Modal content-->
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal">&times;</button>
-	        <h2 class="modal-title"><strong>Your Best Match</strong></h2>
-	      </div>
-	      <div class="modal-body">
-	        <div id="friendName"></div>
-	        <img id="friendImg" class="img img-responsive" alt="" />
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	      </div>
-	    </div>
-
-	  </div>
-	</div>
-
-    <script type="text/javascript"> 
-
-$("#submit").on("click", function(event) {
-    event.preventDefault();
-
-     function validateForm() {
-        var isValid = true;
-        $(".form-control").each(function() {
-          if ($(this).val() === "") {
-            isValid = false;
-          }
-        });
-        $(".chosen-select").each(function() {
-          if ($(this).val() === "") {
-            isValid = false;
-          }
-        });
-        return isValid;
-      }
-      // If all required fields are filled
-      if (validateForm()) {
-        // Create an object for the user"s data
-        var newFriend = {
-        name: $("#name").val(),
-        photo: $("#photo").val(),
-        scores: [
-            $("#q1").val(),
-            $("#q2").val(),
-            $("#q3").val(),
-            $("#q4").val(),
-            $("#q5").val(),
-            $("#q6").val(),
-            $("#q7").val(),
-            $("#q8").val(),
-            $("#q9").val(),
-            $("#q10").val()
-          ]
-        };
-        //post the data to the friends API.
-    $.post("/api/friends", newFriend, function(res) {
-      
-          $("#friendName").text(res.name);
-          $("#friendImg").attr("src", res.photo);
-
-          $("#myModal").modal("toggle");
-        });
-      } else {
-        alert("Please fill out all fields before submitting!");
-      }
-    });
+            //post the data to the friends API.
+            $.post("/api/friends", newFriend, function(res) {
+                $("#friendName").text(res.name);
+                $("#friendImg").attr("src", res.photo);
+                $("#myModal").modal("toggle");
+            });
+            }; 
+            else {
+                alert("Please fill out all fields before submitting!");
+            };
+            });
         </script>
     </body>
 </html>
