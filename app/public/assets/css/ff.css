@@ -2,19 +2,97 @@
     margin:20px;
 }
 
-.container1 {
-    padding: 20px;
-    margin: 10px;
-}
-
 .jumbotron {
     background-image: url('../images/bgimage.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-    padding: 30px;
 }
 
 .question {
     margin: 50px;
 }
 
+body, html {
+    height: 100%;
+}
+
+/* The hero image */
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.hero {
+    /* Sizing */
+    width: 100vw;
+    height: 100vh;
+    
+    /* Flexbox stuff */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    
+    /* Text styles */
+    text-align: center;
+    color: white;
+    
+    /* Background styles */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../images/bgimage.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero-inner {
+padding: 30px;
+}
+
+.hero h1 {
+    /* Text styles */
+    font-size: 5em;
+    
+    /* Margins */
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.hero .btn {
+    /* Positioning and sizing */
+    display: block;
+    width: 200px;
+    
+    /* Padding and margins */
+    padding: 1em;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Text styles */
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    
+    /* Border styles */
+    border: 3px solid white;
+    border-radius: 20px;
+    
+    /* Background styles */
+    background-color: #808000;
+}
+
+a:link, a:visited {
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.linkhome:hover, a.linkhome:active {
+  background-color: #808000 ;
+}
+
+.display-4 {
+    font-family: 'Orbitron', sans-serif;
+}

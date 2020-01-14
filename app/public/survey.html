@@ -4,13 +4,15 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Friend Finder</title>
+ <!-- Import styles and fonts -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/ff.css" type = "text/css">
+        <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Orbitron&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/ff.css">
-        
         <script src="https://code.jquery.com/jquery.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </head>
+
     <body>    
         <div class="container1">
         <div class="jumbotron jumbotron-fluid">
@@ -31,8 +33,6 @@
                     <label for="photoLink">Link to Photo Image (Required)</label>
                     <input type="url" class="form-control" id="photo">
                 </div>
-
-                <hr>
 
                 <div class="question">
                     <h3>Question 1</h3>
@@ -186,69 +186,27 @@
         </div>
 
     <!-- javascript -->
-        <script type="text/javascript"> 
+    <script type="text/javascript"> 
 
-            $("#submit").on("click", function(event) {
-                event.preventDefault();
+    $("#submit").on("click", function(event) {
+        event.preventDefault();
+        console.log("hello");
+        
+        const isValid = false
 
-                function validateForm() {
-                    var isValid = true;
-                    $(".form-control").each(function() {
-                        if ($(this).val() === "") {
-                            isValid = false;
-                        }
-                    });
-            
-                    $(".chosen-select").each(function() {
-                        if ($(this).val() === "") {
-                        isValid = false;
-                        }
-                    });
-                    return isValid;
-                }
-        // If all required fields are filled
-            if (validateForm()) {
-            // Create an object for the user's data
-                var newFriend = {
-                name: $("#name").val(),
-                photo: $("#photo").val(),
-                scores: [
-                    $("#q1").val(),
-                    $("#q2").val(),
-                    $("#q3").val(),
-                    $("#q4").val(),
-                    $("#q5").val(),
-                    $("#q6").val(),
-                    $("#q7").val(),
-                    $("#q8").val(),
-                    $("#q9").val(),
-                    $("#q10").val()
-                ],
+        function validateForm() {
+            $(".form-control").each(function() {
+                if ($(this).val() === "") {
+                    isValid = false;                
                 };
-            
-            $.ajax({
-                type: 'POST',
-                data: newFriend,
-                url: "/api/friends",
-                success: function(res){
-                    alert("Info added!");
-                    $("#friendName").text(res.name);
-                    $("#friendImg").attr("src", res.photo);
-                    $("#myModal").modal("toggle"); //this apparently turns on the modal
-                },
+                return isValid;
             });
+        }; 
+    });   
 
-            //post the data to the friends API.
-            $.post("/api/friends", newFriend, function(res) {
-                $("#friendName").text(res.name);
-                $("#friendImg").attr("src", res.photo);
-                $("#myModal").modal("toggle");
-            });
-            }; 
-            else {
-                alert("Please fill out all fields before submitting!");
-            };
-            });
-        </script>
+
+    </script> 
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </body>
 </html>

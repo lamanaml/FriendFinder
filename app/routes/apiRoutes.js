@@ -7,63 +7,39 @@ module.exports = function(app) {
     });
 
 
-    // app.post('/api/friends', function (req, res) {
-    //     var totalDifference = 0;
-    //     var bestMatch = {
-    //         name: "",
-    //         photo: "",
-    //         friendDifference: 1000
-    //     };
+    app.post('/api/friends', function (req, res) {
+        var bestMatch = {
+            name: "",
+            photo: "",
+            friendDifference: 1000
+        };
 
-    //     var userData = req.body;
-    //     var userName = userData.name;
-    //     var userScores = userData.Scores;
-    //     var b = userScores.map(function(item));
-    // }
+        var userData = req.body;
+        var userScores = userData.scores;
 
-        // var differences = [];
- 
-        // // If there is more than one friend to compare to,
-        // if (thisUser.length > 1) {
-        //     // Step through these potential friends.
-        //     thisUser.forEach(function(user) {
-        //         var totalDifference = 0;
+        console.log(userScores);
 
-        //         // For each answer, compare the answers and add the absolute value of the difference to the total difference.
-        //         for (var i = 0; i < thisUser.answers.length; i++) {
-        //             var otherAnswer = user.answers[i];
-        //             var thisAnswer = thisUser.answers[i];
-        //             var difference = +otherAnswer - +thisAnswer;
-        //             totalDifference += Math.abs(difference);
-        //             console.log(totalDifference)
-        //         }
+        var totalDifference = 0;
 
-        //         differences.push(totalDifference);
-        //     });
+        for (var i = 0; i < friends.length; i++) {
+            console.log(friends(i));
+            totalDifference = 0;
 
-        //     // Find the minimum difference score.
-        //     var minimumDifference = Math.min.apply(null, differences);
+            for (var j = 0; j < friends[i].scores[j]; j++) {
+                totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
 
-        //     // Since there may be more than one potential friend with that score, create an array.
-        //     var bestMatches = [];
+                if (totalDifference <= bestFriend.friendDifference) {
 
-        //     // For each item in differences, if it is equal to the minimumDifference, add the corresponding friendData to the bestMatches array.
-        //     for (var i = 0; i < differences.length; i++) {
-        //         if (differences[i] === minimumDifference) {
-        //             bestMatches.push(friends);
-        //         }
-        //     }
+                    bestMatch.name = friends[i].name;
+                    bestMatch.photo = friends[i].photo;
+                    bestMatch.friendDifference = totalDifference;
+                }
+            }
+        }
+        friends.push(userData);
+        res.json(bestMatch)
 
-        //     // Then send bestMatches to the client.
-        //     res.json(bestMatches);
-        // // If there is only one friend to compare to, skip all that work and just send back that friend.
-        // } else {
-        //     res.json(friends);
-        // }
-
-        // // Once you're done comparing, add the new user to the potential friends data.
-        // friends.push(thisUser);
-
+    })
     }
 
 

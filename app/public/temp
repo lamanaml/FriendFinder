@@ -1,0 +1,44 @@
+
+    
+        if (validateForm()) {
+        // Create an object for the user's data
+            var newFriend = {
+            name: $("#name").val(),
+            photo: $("#photo").val(),
+            scores: [
+                $("#q1").val(),
+                $("#q2").val(),
+                $("#q3").val(),
+                $("#q4").val(),
+                $("#q5").val(),
+                $("#q6").val(),
+                $("#q7").val(),
+                $("#q8").val(),
+                $("#q9").val(),
+                $("#q10").val()
+            ],
+            };
+        
+        $.ajax({
+            type: 'POST',
+            data: newFriend,
+            url: "/api/friends",
+            success: function(res){
+                alert("Info added!");
+                $("#friendName").text(res.name);
+                $("#friendImg").attr("src", res.photo);
+                $("#myModal").modal("toggle"); 
+            },
+        });
+
+        //post the data to the friends API.
+        $.post("/api/friends", newFriend, function(res) {
+            $("#friendName").text(res.name);
+            $("#friendImg").attr("src", res.photo);
+            $("#myModal").modal("toggle");
+        });
+        } 
+        else {
+            alert("Please fill out all fields before submitting!");
+        };
+    //     });
